@@ -1,0 +1,15 @@
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\bin\Debug\net7.0\TaxSlab.exe
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\bin\Debug\net7.0\TaxSlab.deps.json
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\bin\Debug\net7.0\TaxSlab.runtimeconfig.json
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\bin\Debug\net7.0\TaxSlab.dll
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\bin\Debug\net7.0\TaxSlab.pdb
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.csproj.AssemblyReference.cache
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.AssemblyInfoInputs.cache
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.AssemblyInfo.cs
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.csproj.CoreCompileInputs.cache
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.dll
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\refint\TaxSlab.dll
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.pdb
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\TaxSlab.genruntimeconfig.cache
+C:\Users\YUVI\Source\Repos\TaxSlab\TaxSlabCalculation\ConsoleApp1\obj\Debug\net7.0\ref\TaxSlab.dll
