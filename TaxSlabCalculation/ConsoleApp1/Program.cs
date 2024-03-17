@@ -16,7 +16,7 @@ namespace TaxCalculatorApp
     }
 
     // Derived class for IndividualTaxpayer
-    // Here ITaxable is a interface and it is inherited.
+    // Here ITaxable is a interface and it is used for inheritance.
     class IndividualTaxpayer : Taxpayer, ITaxable
     {
         private string Name;
@@ -29,26 +29,25 @@ namespace TaxCalculatorApp
             Console.WriteLine("Tax Calculator");
             Console.WriteLine("========================================");
             Console.WriteLine(" ");
-            Console.WriteLine(" ");
             Console.WriteLine("----------------------------------------");
-            Console.WriteLine("Persona Details");
+            Console.WriteLine("Person Details");
             Console.WriteLine("----------------------------------------");
-            Console.WriteLine(" ");
             Console.WriteLine(" ");
 
             while (true)
             {
                 Console.Write("Enter Name: ");
-                string inputGender = Console.ReadLine().ToLower();
-                if(string.IsNullOrEmpty(inputGender) || string.IsNullOrWhiteSpace(inputGender))
+                string inputName = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(inputName) || string.IsNullOrWhiteSpace(inputName))
                 {
                     Console.WriteLine("Name is required");
                     Console.Write("Enter Name: ");
-                    inputGender = Console.ReadLine().ToLower();
+                    inputName = Console.ReadLine().ToLower();
                 }
                 else
                 {
-                    Name = inputGender;
+                    Name = inputName;
                     break;
                 }
             }
@@ -67,22 +66,30 @@ namespace TaxCalculatorApp
                     Console.WriteLine("Invalid input! Please enter 'Male' or 'Female'.");
                 }
             }
-            while (true)
+            bool validAge = false;
+            while (!validAge)
             {
                 Console.Write("Enter age: ");
-                int inputAge = Convert.ToInt32(Console.ReadLine());
-                if(inputAge > 0)
-                {
-                    age= inputAge;
-                    break;
+
+                string inputAge = Console.ReadLine();
+                try { 
+                    age = Convert.ToInt32(inputAge);
+                    if(age > 0)
+                    {
+                        validAge = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Age must be greater than zero.");
+                    }
                 }
-                else
+                catch (FormatException)
                 {
-                    Console.WriteLine("Enter correct age: ");
+                    Console.WriteLine("Invalid input format! Please enter a number for age.");
                 }
+
             }
             
-            Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("----------------------------------------");
@@ -90,16 +97,78 @@ namespace TaxCalculatorApp
             Console.WriteLine("----------------------------------------");
 
 
-            Console.Write("Enter income: ");
-            income = Convert.ToDouble(Console.ReadLine());
+            bool validIncome = false;
+            while (!validIncome)
+            {
+                Console.Write("Enter income: ");
+                string inputIncome = Console.ReadLine();
 
-            Console.Write("Enter investment amount: ");
-            investment = Convert.ToDouble(Console.ReadLine());
+                try
+                {
+                    income = Convert.ToDouble(inputIncome);
+                    if (income > 0)
+                    {
+                        validIncome = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Income must be greater than zero.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input format! Please enter a number for income.");
+                }
+            }
 
-            Console.Write("Enter home loan/house rent amount: ");
-            homeLoanOrRent = Convert.ToDouble(Console.ReadLine());
+            bool validInvestment = false;
+            while (!validInvestment)
+            {
+                Console.Write("Enter investment amount: ");
+                string inputInvestment = Console.ReadLine();
 
-           
+                try
+                {
+                    investment = Convert.ToDouble(inputInvestment);
+                    if (investment >= 0)
+                    {
+                        validInvestment = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Amount must be greater than or equal to zero.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input format! Please enter a number for investment.");
+                }
+            }
+
+            bool validHomeLoanOrRent = false;
+            while (!validHomeLoanOrRent)
+            {
+                Console.Write("Enter home loan/house rent amount: ");
+                string inputHomeLoanOrRent = Console.ReadLine();
+
+                try
+                {
+                    homeLoanOrRent = Convert.ToDouble(inputHomeLoanOrRent);
+                    if (homeLoanOrRent >= 0)
+                    {
+                        validHomeLoanOrRent = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Amount must be greater than or equal to zero.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input format! Please enter a number for home loan/house rent.");
+                }
+            }
+
         }
 
         public void CalculateTax()
@@ -113,7 +182,6 @@ namespace TaxCalculatorApp
 
             double totalTax = 0;
 
-            // Applying tax slabs based on gender and age
             double[][] taxSlabs;
             if (gender == "male")
             {
@@ -153,6 +221,7 @@ namespace TaxCalculatorApp
 
             Console.WriteLine($"Total taxable income: {income - homeLoanExemption - investmentExemption}");
             Console.WriteLine($"Income tax: {totalTax}");
+            Console.ReadLine();
         }
     }
 
